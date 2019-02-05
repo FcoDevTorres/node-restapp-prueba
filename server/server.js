@@ -11,8 +11,13 @@ app.get("/usuario", (req, res) => {
     res.json({ "mensaje": "sopotamadreasdasds" });
 });
 
-app.put("/usuario", (req, res) => {
-    res.json("put usuario");
+app.put("/usuario/:user", (req, res) => {
+    let usuario = req.params.user;
+
+    res.json({
+        "mensaje": "put usuario",
+        usuario
+    });
 });
 app.delete("/usuario", (req, res) => {
     res.json("delete usuario");
